@@ -1,0 +1,55 @@
+[{
+        "_id": 1,
+        "name": "SINTERO PLUS MAN RIGID 28inch",
+        "image": "https://i.ibb.co/K939pFq/1.png",
+        "description": "Allant+ 8S Stagger is a performance e-bike built.",
+        "price": "763.77",
+        "quantity": "20",
+        "supplier": "Adam Mundo"
+    },
+    {
+        "_id": 2,
+        "name": "SPRINT E-ADVENTURE 28inch",
+        "image": "https://i.ibb.co/ZN2KNtx/2.jpg",
+        "description": "The best electric bike in the world, you could own!",
+        "price": "799",
+        "quantity": "10",
+        "supplier": "Nikolaj Coster-Waldau"
+    },
+    {
+        "_id": 3,
+        "name": "HARMONY LADY E6000 NEXUS 8 Di2",
+        "image": "https://i.ibb.co/jRM7JLm/3.jpg",
+        "description": "You can ride electric scooters in multiple terrains.",
+        "price": "2099",
+        "quantity": "16",
+        "supplier": "Peter Dinklage"
+    },
+    {
+        "_id": 4,
+        "name": "RIMINI, 24 SPEED, 600A",
+        "image": "https://i.ibb.co/J3BwCTk/4.jpg",
+        "description": "Swagtron EB-6 T Bandit All-Mountain Bike 7-Speed",
+        "price": "229",
+        "quantity": "30",
+        "supplier": "Isaac Hempstead"
+    },
+    {
+        "_id": 5,
+        "name": "S5 PRO TIAGRA",
+        "image": "https://i.ibb.co/m4m4h8Z/5.jpg",
+        "description": "The Packa is high-performing, full-featured bike",
+        "price": "2064.03",
+        "quantity": "6",
+        "supplier": "Jason Momoa"
+    },
+    {
+        "_id": 6,
+        "name": "SHOCKBLAZE, Ride 24inch",
+        "image": "https://i.ibb.co/qybLQhg/6.png",
+        "description": "Electric folding bicycles are sprouting up on city.",
+        "price": "499.66",
+        "quantity": "40",
+        "supplier": "Alfie Allen"
+    }
+]
