@@ -1,0 +1,15 @@
+.team-container img{
+    width: 150px;
+    height: 150px;
+}
+.team-container small{
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.team-container h4{
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
