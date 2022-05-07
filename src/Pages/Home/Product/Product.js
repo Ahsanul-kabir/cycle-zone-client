@@ -1,9 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../Products/Products.css'
 
 const Product = ({ product }) => {
-    const { name, description, image, price, quantity, supplier } = product;
+    const { name, _id, description, image, price, quantity, supplier } = product;
+
+    const navigate = useNavigate();
+    const navigateToServiceDetail = id => {
+        navigate(`/inventory/${id}`);
+    }
     return (
 
         <div className="col">
@@ -17,7 +22,7 @@ const Product = ({ product }) => {
                     <h4 className="card-title">{description}</h4>
                     <h6>Supplier - {supplier}</h6>
                     <div className="text-center my-4">
-                        <Link to='/service' className="btn btn-warning">BUY NOW</Link>
+                        <button onClick={() => navigateToServiceDetail(_id)} className='btn btn-warning'>Stock Update</button>
                     </div>
                 </div>
             </div>
