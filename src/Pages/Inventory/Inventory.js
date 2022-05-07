@@ -13,6 +13,29 @@ const Inventory = () => {
             .then(data => setProduct(data))
     }, [])
 
+    const handleUpdate = (event) => {
+        event.preventDefault();
+
+        const quantity = event.target.quantity.value
+        const updatedQuantity = { quantity }
+
+        // Send data to server
+        const url = `http://localhost:5000/products/${id}`
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedQuantity)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('Success', data)
+                alert('Restock Successfully')
+                event.target.reset()
+            })
+    }
+
     return (
         <div class="container">
             <div class="row" style={{ margin: '100px 0' }}>
@@ -34,7 +57,12 @@ const Inventory = () => {
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4">
-                    <h2>Restock</h2>
+                    <h2>Restock Item</h2>
+                    <form onSubmit={handleUpdate}>
+                        <input type="text" name="quantity" className="form-control" placeholder='quantity' required />
+                        <br />
+                        <input type="submit" value="Restock" className='btn btn-primary mt-1' />
+                    </form>
                 </div>
             </div>
 
