@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import './Inventory.css'
 
 const Inventory = () => {
     const [product, setProduct] = useState([]);
@@ -8,9 +7,11 @@ const Inventory = () => {
     const { id } = useParams();
 
     const url = `http://localhost:5000/products/${id}`
-    fetch(url)
-        .then(res => res.json())
-        .then(data => setProduct(data))
+    useEffect(() => {
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setProduct(data))
+    }, [])
 
     return (
         <div class="container">

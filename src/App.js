@@ -4,6 +4,7 @@ import Inventory from './Pages/Inventory/Inventory';
 import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
+import ManageInventory from './Pages/ManageInventory/ManageInventory/ManageInventory';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import NotFound from './Pages/Shared/NotFound/NotFound';
@@ -23,6 +24,7 @@ function App() {
           </RequireAuth>
         }
         />
+        <Route path="/inventory" element={<ManageInventory />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

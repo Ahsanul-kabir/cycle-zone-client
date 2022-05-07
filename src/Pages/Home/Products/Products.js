@@ -1,11 +1,16 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useProduct from '../../../hooks/useProduct';
+import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 import './Products.css'
 
 const Products = () => {
-    const [products] = useProduct();
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/products')
+            .then(res => res.json())
+            .then(data => setProducts(data.slice(0, 5)))
+
+    }, [])
     return (
         <div className='products'>
             <div className="text-center py-5 poppins-font">
