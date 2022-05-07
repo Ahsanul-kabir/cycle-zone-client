@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useProduct from '../../../hooks/useProduct';
 import Product from '../Product/Product';
 import './Products.css'
