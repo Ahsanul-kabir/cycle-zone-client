@@ -27,6 +27,8 @@ const Header = () => {
                             {
                                 user?.email ? <>
                                     <NavLink as={Link} activeClassName="selected" to="/addItem">Add Item</NavLink>
+                                    <NavLink as={Link} activeClassName="selected" to="/myItem">My Items</NavLink>
+                                    <NavLink as={Link} activeClassName="selected" to="/manageItem">Manage Items</NavLink>
                                 </> : ''
                             }
                         </Nav>

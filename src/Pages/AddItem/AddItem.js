@@ -1,17 +1,22 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 import './AddItem.css';
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+
     const handleAddUser = (event) => {
         event.preventDefault();
 
+        const email = user.email
         const name = event.target.name.value
         const image = event.target.imgLink.value
         const description = event.target.description.value
         const price = event.target.price.value
         const quantity = event.target.quantity.value
         const supplier = event.target.supplier.value
-        const product = { name, image, description, price, quantity, supplier }
+        const product = { email, name, image, description, price, quantity, supplier }
 
         // Send data to server
         fetch('http://localhost:5000/products', {
