@@ -43,13 +43,14 @@ const AddItem = () => {
                         <form onSubmit={handleAddUser}>
                             <input type="text" class="form-control" name="name" placeholder="Product Name" required />
                             <br />
+                            <p className='text-muted'><small>Image link sample: https://i.ibb.co/qybLQhg/6.png</small></p>
                             <input type="text" class="form-control" name="imgLink" placeholder="Image Link" required />
                             <br />
                             <textarea type="text" class="form-control" name="description" placeholder="Description" required />
                             <br />
-                            <input type="text" class="form-control" name="price" placeholder="Price" required />
+                            <input type="number" class="form-control" name="price" placeholder="Price" required />
                             <br />
-                            <input type="text" class="form-control" name="quantity" placeholder="Quantity" required />
+                            <input type="number" class="form-control" name="quantity" placeholder="Quantity" required />
                             <br />
                             <input type="text" class="form-control" name="supplier" placeholder="Supplier" required />
                             <br />
