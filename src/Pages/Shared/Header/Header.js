@@ -24,6 +24,7 @@ const Header = () => {
                         <Nav className="mx-auto">
                             <NavLink as={Link} activeClassName="selected" to="home">Home</NavLink>
                             <NavLink as={Link} activeClassName="selected" to="about">About</NavLink>
+                            <NavLink as={Link} activeClassName="selected" to="blogs">Blogs</NavLink>
                             {
                                 user?.email ? <>
                                     <NavLink as={Link} activeClassName="selected" to="/addItem">Add Item</NavLink>

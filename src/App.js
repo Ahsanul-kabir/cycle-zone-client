@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import About from './Pages/About/About';
 import AddItem from './Pages/AddItem/AddItem';
 import Blogs from './Pages/Blogs/Blogs';
 import Home from './Pages/Home/Home/Home';
@@ -41,6 +42,7 @@ function App() {
         }
         />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/about" element={<About />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
