@@ -5,15 +5,35 @@ import auth from '../../firebase.init';
 import useProduct from '../../hooks/useProduct';
 
 const MyItems = () => {
-    const [products] = useProduct();
+    const [products, setProducts] = useProduct();
 
     const [user] = useAuthState(auth);
+
+    const handleUserDelete = (id) => {
+        const proceed = window.confirm('Are you sure you want to delete?');
+        if (proceed) {
+            // console.log('deleting user with id, ', id);
+
+            const url = `https://afternoon-ridge-55411.herokuapp.com/products/${id}`
+            fetch(url, {
+                method: 'DELETE',
+            })
+                .then(res => res.json())
+                .then((data) => {
+                    if (data.deletedCount > 0) {
+                        console.log('Successfully deleted');
+                        const remaining = products.filter(product => product._id !== id)
+                        setProducts(remaining)
+                    }
+                })
+        }
+    }
 
     // match products to user
     const myItems = products.filter(product => product.email === user.email)
 
     let data;
-    if (products.email) {
+    if (myItems.length > 0) {
         data = <>
             <Container className="py-5">
                 <h2 className="text-center pb-4 text-uppercase text-danger"> Your Added Products</h2>
@@ -26,6 +46,7 @@ const MyItems = () => {
                             <th>Price</th>
                             <th>Quantity</th>
                             <th>Supplier</th>
+                            <th>Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,6 +59,7 @@ const MyItems = () => {
                                 <td>{product.price}</td>
                                 <td>{product.quantity}</td>
                                 <td>{product.supplier}</td>
+                                <td><button className="btn btn-danger" onClick={() => handleUserDelete(product._id)}>Delete</button></td>
                             </tr>
                             )
                         }
