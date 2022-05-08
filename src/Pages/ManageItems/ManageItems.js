@@ -17,7 +17,7 @@ const ManageItems = () => {
         if (proceed) {
             // console.log('deleting user with id, ', id);
 
-            const url = `http://localhost:5000/products/${id}`
+            const url = `https://afternoon-ridge-55411.herokuapp.com/products/${id}`
             fetch(url, {
                 method: 'DELETE',
             })

@@ -19,7 +19,7 @@ const AddItem = () => {
         const product = { email, name, image, description, price, quantity, supplier }
 
         // Send data to server
-        fetch('http://localhost:5000/products', {
+        fetch('https://afternoon-ridge-55411.herokuapp.com/products', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

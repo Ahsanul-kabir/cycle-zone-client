@@ -7,7 +7,7 @@ const Inventory = () => {
     const { id } = useParams();
     const { quantity } = product;
 
-    const url = `http://localhost:5000/products/${id}`
+    const url = `https://afternoon-ridge-55411.herokuapp.com/products/${id}`
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -20,7 +20,7 @@ const Inventory = () => {
         const newProduct = { ...product, quantity: newQuantity }
         //copy all previous data if exist in product and setup new quantity
         setProduct(newProduct);
-        fetch(`http://localhost:5000/products/${id}`, {
+        fetch(`https://afternoon-ridge-55411.herokuapp.com/products/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Inventory = () => {
         const newProduct = { ...product, quantity: newQuantity }
         setProduct(newProduct);
         // Send data to server
-        const url = `http://localhost:5000/products/${id}`
+        const url = `https://afternoon-ridge-55411.herokuapp.com/products/${id}`
         fetch(url, {
             method: 'PUT',
             headers: {
