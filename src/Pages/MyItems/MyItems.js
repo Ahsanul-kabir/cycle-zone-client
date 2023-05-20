@@ -14,7 +14,7 @@ const MyItems = () => {
         if (proceed) {
             // console.log('deleting user with id, ', id);
 
-            const url = `https://afternoon-ridge-55411.herokuapp.com/products/${id}`
+            const url = `https://cycle-zone-server.onrender.com/products/${id}`
             fetch(url, {
                 method: 'DELETE',
             })
